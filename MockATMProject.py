@@ -3,7 +3,16 @@
 name = input('What is your name? \n')
 allowedUsers = ['Jalen', 'Mike', 'Tony', 'Lisa']
 allowedPassword = ['PasswordJalen', 'PasswordMike', 'PasswordTony', 'PasswordLisa']
+from datetime import date
+today = date.today()
 
+# dd/mm/YY
+d1 = today.strftime("%d/%m/%Y")
+print( d1)
+
+from datetime import datetime
+now = datetime.now()
+print(now)
 
 
 
@@ -13,12 +22,13 @@ if(name in allowedUsers):
 
     if(password == allowedPassword[userId]):
         print('Welcome  %s' %  name)
-        print('These are the available options:')
+        print('These are the available options:' ) 
         print('1. Withdrawl')
         print('2. Deposit')
         print('3. Complaint')
 
-        selectOption = int(input('Please select an option:'))
+        selectOption = int(input('Please select an option:' ))
+        print(d1, now)
         userInput = True 
         print(selectOption)
         if(selectOption == 1):
@@ -27,25 +37,49 @@ if(name in allowedUsers):
             amount = input('')
             print('You selected ' + amount + ' is this correct?')
             first_respone = 'yes'
-            input('')
-            if('yes'):
+            response = input('')
+            if(response =='yes'):
                 print('Have a great day and thanks for choosing Chase Bank!')
-            else:
-                print('Please renter the amount that you need.')
+                returnres = input('Would you like to return to the main menu? ' )
+                if(returnres == 'yes'):
+                    print('These are the available options.')
+                    print('1. Withdrawl')
+                    print('2. Deposit')
+                    print('3. Complaint')
+                    selectOption = int(input('Please select an option:'))
+                    print('You selected %s' % selectOption)
+
+                    
+            elif(returnres =='no'):
+                    print('Please renter the amount that you need.')
 
         
         elif(selectOption == 2):
             print('You selected %s' % selectOption)
             print('Please insert cash.')
-            cash = input('')
+            cash = input('How much cash did you enter: ')
         
             print(cash + " is the amount that is displayed on the screen correct?")
-            member_response = 'yes'
-            input('')
-            if(cash == 'yes'):
+            
+            correct_cash = input('')
+            if(correct_cash == 'yes'):
                 print('Have a great day, and thanks for choosing Chase Bank!')
-            else:
+            elif(correct_cash == 'no'):
                 print('Please renter the cash.')
+                print('Please insert cash.')
+                cash = input('How much cash did you enter: ')
+                print(cash + " is the amount that is displayed on the screen correct?")
+                correct_cash = input('')
+                if(correct_cash == 'yes'):
+                    print('Have a great day, and thanks for choosing Chase Bank!')
+                elif(correct_cash == 'no'):
+                    print('Please renter the cash.')
+                    
+                    
+                    
+                    
+                    
+            
             
             
             
