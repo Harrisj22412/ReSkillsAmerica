@@ -1,5 +1,8 @@
-global balance
+#Please run each function one at a time.
 
+
+global balance
+import random 
 global amount
 
 
@@ -14,11 +17,9 @@ class Budget:
 
     def transfer(self):
         print('Transfer was successfully made for your payment today.')
-        #genereate and print confirmation number
+        confirmation_number = random.randrange(1111, 9999)
+        print(confirmation_number)
 
-    #def expenses(self, amount):
-        #self.amount = str(amount)
-        #print('These are the expenses for ' + '' +  self.category + '' +  self.amount)
 
     def deposit(self, amount, balance):
         
@@ -93,7 +94,9 @@ class Car(Budget):
         print(self.model, self.year, self.amount)
         
 
-#j is an object created from the class Car
+#run each function one at a time, to view the operations
+
+
 my_car = Car('Telsa', 2021 , 550)
 #print(my_car.car_details(550))
 
@@ -106,7 +109,7 @@ jalen_budget = Budget('Entertainment ', 600)
 
 #jalen_budget.deposit(500, 300)
 
-#t is an object created from the class Car
+
 clothing_category = Clothing('Nike', '300')
 #print(clothing_category.clothing_expenses())
 
